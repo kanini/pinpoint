@@ -3,7 +3,7 @@
 This repo hosts **pinpoint.ts**, a cross-platform script that bulk geocodes
 U.S. street addresses. It reads addresses from a CSV file, looks up their
 coordinates with [Nominatim](https://nominatim.org/) by default (or another
-service if you set `GEOCODER_URL`), and writes results to a GeoJSON file.
+service if you set `GEOCODER_URL`), and writes results to GeoJSON and SQL files.
 
 ### Requirements
 - [Bun](https://bun.sh/)  
