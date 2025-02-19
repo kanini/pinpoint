@@ -1,0 +1,16 @@
+{
+  "name": "pinpoint",
+  "module": "pinpoint.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prettier": "^3.5.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "prompts": "^2.4.2"
+  }
+}
