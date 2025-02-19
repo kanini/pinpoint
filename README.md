@@ -16,11 +16,7 @@ service if you set `GEOCODER_URL`), and writes results to a GeoJSON file.
    ```bash
    bun install
    ```
-4. **Set the necessary environment variable**:
-   ```bash
-   export PINPOINT_ADDRESS_LIST=/path/to/addresses.csv
-   ```
-   Optionally, override the default geocoder URL:
+4. **Optionally, override the default geocoder URL**:
    ```bash
    export GEOCODER_URL=https://another-geocode-service.com/search
    ```
@@ -28,10 +24,10 @@ service if you set `GEOCODER_URL`), and writes results to a GeoJSON file.
 ### Usage
 Run the script with Bun:
 ```bash
-bun run pinpoint.ts my-geojson-output.json
+bun run pinpoint.ts <addresses.csv>
 ```
-- The `my-geojson-output.json` file will contain your geocoded results.
-- Make sure `PINPOINT_ADDRESS_LIST` points to a valid CSV.
+The script reads addresses from the CSV and will produce `<addresses.csv>.sql`
+and `<addresses.csv>.geojson` files in the same folder.
 
 ### What It Does
 1. Reads each row of the CSV to get `minimalAddress` (and `zip` if needed).
@@ -47,6 +43,6 @@ practiceId,departmentId,zip,minimalAddress
 ```
 
 ### Additional Notes
-- The script uses a 1-second pause between geocoding requests to help avoid rate-limiting.
+- The script uses a 300 ms pause between geocoding requests to help avoid rate-limiting.
 - For large CSVs or more stringent rate limits, you can increase that delay.
 - Always check and follow the usage policies of any geocoding service you use.
